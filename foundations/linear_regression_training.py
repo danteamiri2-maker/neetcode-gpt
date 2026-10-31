@@ -26,8 +26,6 @@ class Solution:
         # Return np.round(final_weights, 5)
         
         weights = initial_weights
-        
-        
         for _ in range(num_iterations):
             Y_pred = self.get_model_prediction(X, weights)
             for j in range(len(weights)):
