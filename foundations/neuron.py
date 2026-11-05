@@ -14,13 +14,11 @@ class Solution:
         # ReLU: max(0, z)
         # return round(your_answer, 5)
 
-        def activate(activation):
-            if activation == "relu":
-                return lambda z: np.maximum(0, z)
-            if activation == "sigmoid":
-                return lambda z: 1 / (1 + np.exp(-z))
+        
+        activations = {"relu": lambda z: np.maximum(0, z),
+                        "sigmoid": lambda z: 1 / (1 + np.exp(-z))}
 
-        act = activate(activation)
+        act = activations[activation]
         output = np.dot(x, w) + b
         y = act(output)
 
